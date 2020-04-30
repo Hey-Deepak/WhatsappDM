@@ -1,0 +1,2 @@
+rootProject.name='Whatsapp DM'
+include ':app'
