@@ -34,8 +34,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
                 android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="15dp"
                 android:backgroundTint="#000000"
                 app:cardCornerRadius="15dp"
@@ -91,7 +91,7 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="47dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="15dp"
@@ -102,23 +102,47 @@
                 app:layout_constraintTop_toBottomOf="@+id/materialCardView"
                 tools:layout_editor_absoluteX="15dp">
 
-                <EditText
-                    android:id="@+id/message"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:backgroundTint="#fff"
-                    android:fontFamily="monospace"
-                    android:gravity="center"
-                    android:hint="Type Your Message"
-                    android:importantForAutofill="no"
-                    android:inputType="textLongMessage"
-                    android:padding="15dp"
-                    android:textColor="#fff"
-                    android:textColorHint="#fff" />
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/message"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_toStartOf="@+id/btn_speak"
+                        android:backgroundTint="#fff"
+                        android:fontFamily="monospace"
+                        android:gravity="center"
+                        android:hint="Type Your Message "
+                        android:importantForAutofill="no"
+                        android:inputType="textLongMessage"
+                        android:padding="10dp"
+                        android:textColor="#fff"
+                        android:textColorHint="#fff" />
+
+                    <ImageButton
+                        android:id="@+id/btn_speak"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="10dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="9dp"
+                        android:background="@null"
+                        android:scaleType="center"
+                        android:src="@drawable/mic"></ImageButton>
+
+                </RelativeLayout>
+
 
             </com.google.android.material.card.MaterialCardView>
+
 
             <Button
                 android:layout_width="wrap_content"
@@ -178,9 +202,9 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
                 android:backgroundTint="#25d366"
-                android:text="Hey"
                 android:onClick="fastReplayTwo_btn"
                 android:padding="10dp"
+                android:text="Hey"
                 android:textAllCaps="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -193,9 +217,9 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
                 android:backgroundTint="#25d366"
-                android:text="How are you?"
                 android:onClick="fastReplayThree_btn"
                 android:padding="10dp"
+                android:text="How are you?"
                 android:textAllCaps="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -208,9 +232,9 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
                 android:backgroundTint="#25d366"
-                android:text="What's up?"
                 android:onClick="fastReplayFour_btn"
                 android:padding="10dp"
+                android:text="What's up?"
                 android:textAllCaps="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -223,9 +247,9 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
                 android:backgroundTint="#25d366"
-                android:text="What's going on?"
                 android:onClick="fastReplayFive_btn"
                 android:padding="10dp"
+                android:text="What's going on?"
                 android:textAllCaps="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
