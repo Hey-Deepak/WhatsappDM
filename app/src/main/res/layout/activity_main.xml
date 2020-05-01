@@ -136,7 +136,8 @@
                         android:layout_marginRight="9dp"
                         android:background="@null"
                         android:scaleType="center"
-                        android:src="@drawable/mic"></ImageButton>
+                        android:src="@drawable/mic">
+                    </ImageButton>
 
                 </RelativeLayout>
 
