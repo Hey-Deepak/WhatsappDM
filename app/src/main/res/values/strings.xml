@@ -2,4 +2,7 @@
     <string name="app_name">WhatsappDirect</string>
     <string name="phone">Phone Number</string>
     <string name="username">Enter your user name here.</string>
+    <string name="tap_on_mic">Tap on the mic</string>
+    <string name="speech_prompt">Say something&#8230;</string>
+    <string name="speech_not_supported">Sorry! Your device doesn\'t support speech input</string>
 </resources>
