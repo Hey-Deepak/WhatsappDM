@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                     ArrayList<String> result = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     txtSpeech.setText(result.get(0));
+                    message.setSelection(message.getText().length());
                 }
                 break;
         }
