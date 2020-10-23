@@ -38,37 +38,6 @@ public class MainActivity extends AppCompatActivity {
     private final int REQ_CODE = 1000;
 
 
-    private void promptSpeechInput() {
-        Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
-        intent.putExtra(RecognizerIntent.EXTRA_PROMPT,
-                getString(R.string.speech_prompt));
-        try {
-            startActivityForResult(intent, REQ_CODE);
-        } catch (ActivityNotFoundException a) {
-            Toast.makeText(MainActivity.this, R.string.speech_not_supported, Toast.LENGTH_SHORT).show();
-
-        }
-
-
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        switch (requestCode) {
-            case REQ_CODE:
-                if (resultCode == RESULT_OK && null != data) {
-                    ArrayList<String> result = data
-                            .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    txtSpeech.setText(result.get(0));
-                    message.setSelection(message.getText().length());
-                }
-                break;
-        }
-    }
-
     final Context context = this;
     CountryCodePicker ccp;
     EditText userPhoneNumber;
@@ -243,6 +212,37 @@ public class MainActivity extends AppCompatActivity {
                     Uri.parse(
                             "https://api.whatsapp.com/send?phone=" + ccp.getFullNumberWithPlus() + "&text=What's going on?"
                     )));
+        }
+    }
+
+    private void promptSpeechInput() {
+        Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT,
+                getString(R.string.speech_prompt));
+        try {
+            startActivityForResult(intent, REQ_CODE);
+        } catch (ActivityNotFoundException a) {
+            Toast.makeText(MainActivity.this, R.string.speech_not_supported, Toast.LENGTH_SHORT).show();
+
+        }
+
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case REQ_CODE:
+                if (resultCode == RESULT_OK && null != data) {
+                    ArrayList<String> result = data
+                            .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    txtSpeech.setText(result.get(0));
+                    message.setSelection(message.getText().length());
+                }
+                break;
         }
     }
 }
